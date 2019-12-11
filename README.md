@@ -1,3 +1,3 @@
 # PIXBURB Commerce
 
-This project was generated with Commercial Admin Application
+This project was generated for Commercial Admin Application
