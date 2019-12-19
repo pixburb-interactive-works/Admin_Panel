@@ -11,36 +11,48 @@
         </div>
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body" style="padding: 0% 10%">
+          <div class="card-body" style="padding: 0 10%">
             <div style="text-align: center;padding: 2%">Please Enter your details</div>
-            <form>
+            <form [formGroup]="createAdminUser">
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
+                  <label>
+                    <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+                  </label>
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
+                  <label>
+                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+                  </label>
                 </div>
               </div>
               <div class="row"><h1></h1></div>
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Email">
+                  <label>
+                    <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                  </label>
                 </div>
               </div>
               <div class="row"><h1></h1></div>
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Phone Number">
+                  <label>
+                    <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone">
+                  </label>
                 </div>
               </div>
               <div class="row"><h1></h1></div>
               <div class="row">
                 <div class="col">
-                  <input type="password" class="form-control" placeholder="Password">
+                  <label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                  </label>
                 </div>
                 <div class="col">
-                  <input type="password" class="form-control" placeholder="Retype Password">
+                  <label>
+                    <input type="password" class="form-control" placeholder="Retype Password" formControlName="retypePassword">
+                  </label>
                 </div>
               </div>
               <div class="row"><h1></h1></div>
@@ -48,15 +60,18 @@
               <div class="row"><h1></h1></div>
               <div class="row">
                 <div class="col" style="display: flex;flex-direction: row; justify-content: flex-end;">
-                  <button type="submit" class="btn btn-sm btn-primary" style=" margin: 0% 5%">
+                  <button type="button" class="btn btn-sm btn-primary" style=" margin: 0% 5%" [disabled]="createAdminUser.invalid" (click)="createAdmin()">
                     Submit
                   </button>
-                  <button type="submit" class="btn btn-sm btn-secondary">
+                  <button type="button" class="btn btn-sm btn-secondary">
                     Reset
                   </button>
                 </div>
               </div>
               <div class="row"><h1></h1></div>
+              <div class="row" *ngIf="errorMessage.length > 0"><h1></h1></div>
+              <div class="row" *ngIf="errorMessage.length > 0" style="display: flex; flex-direction: row; justify-content: center;color: red">{{errorMessage}}</div>
+              <div class="row" *ngIf="errorMessage.length > 0"><h1></h1></div>
               <div class="row"><h1></h1></div>
             </form>
           </div>
@@ -72,7 +87,26 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <form [formGroup]="OTPVerification">
+              <div class="row">
+                <div class="col">
+                  <label style="text-align: center">
+                    Verify your OTP
+                  </label>
+                </div>
+                <div class="col">
+                  <label>
+                    <input type="text" class="form-control" placeholder="Enter 6 digits OTP" formControlName="otpField" maxlength="6">
+                  </label>
+                </div>
+                <div class="col" style="display: flex; flex-direction: row; align-items: center">
+                  <button class="btn btn-primary btn-sm" [disabled]="OTPVerification.invalid" (click)="OTPVerify()">Verify OTP</button>
+                </div>
+              </div>
+              <div class="row" *ngIf="errorOTPMessage.length > 0"><h1></h1></div>
+              <div class="row" *ngIf="errorOTPMessage.length > 0" style="display: flex; flex-direction: row; justify-content: center;color: red">{{errorOTPMessage}}</div>
+              <div class="row" *ngIf="errorOTPMessage.length > 0"><h1></h1></div>
+            </form>
           </div>
         </div>
       </div>
