@@ -5,26 +5,27 @@
       <div class="text-center" style="padding: 2%"><h5>Login into your Organization</h5></div>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
-               aria-describedby="emailHelp">
+        <input aria-describedby="emailHelp" class="form-control" formControlName="email" id="exampleInputEmail1"
+               type="email">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+        <input class="form-control" formControlName="password" id="exampleInputPassword1" type="password">
       </div>
       <div class="form-group" style="display: flex; justify-content: flex-end">
         <a href="" style="font-size: small">Forgot Password?</a>
       </div>
       <div class="form-group" style="display: flex; justify-content: flex-end">
-        <button type="button" class="btn btn-sm btn-primary" (click)="loginOnClick()" [disabled]="loginForm.invalid" style="margin-right: 2%">
+        <button (click)="loginOnClick()" [disabled]="loginForm.invalid" class="btn btn-sm btn-primary" style="margin-right: 2%"
+                type="button">
           Submit
         </button>
-        <button type="button" class="btn btn-sm btn-secondary" (click)="restOnClick()">
+        <button (click)="restOnClick()" class="btn btn-sm btn-secondary" type="button">
           Reset
         </button>
       </div>
       <div class="form-group" style="display: flex; justify-content: center">
-        <a href="" [routerLink]="'/createOrganization'" class="text-center">Create New Organization</a>
+        <a [routerLink]="'/createOrganization'" class="text-center" href="">Create New Organization</a>
       </div>
     </form>
   </div>

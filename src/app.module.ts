@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './routing/app-routing.module';
 
-import { AppComponent } from './components/app/app.component';
-import { LandComponent } from './components/app/land/land.component';
-import { LoginComponent } from './components/app/login/login.component';
-import { SignupComponent } from './components/app/signup/signup.component';
-import { HomeComponent } from './components/app/home/home.component';
+import {AppComponent} from './components/app/app.component';
+import {LandComponent} from './components/app/land/land.component';
+import {LoginComponent} from './components/app/login/login.component';
+import {SignupComponent} from './components/app/signup/signup.component';
+import {HomeComponent} from './components/app/home/home.component';
 import {UserService} from './services/user.service';
-import { CreateOrganizationComponent } from './components/app/create-organization/create-organization.component';
+import {CreateOrganizationComponent} from './components/app/create-organization/create-organization.component';
 
 @NgModule({
   declarations: [
@@ -33,4 +33,5 @@ import { CreateOrganizationComponent } from './components/app/create-organizatio
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

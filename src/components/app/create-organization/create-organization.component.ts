@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../services/user.service';
 import * as $ from 'jquery';
@@ -19,7 +19,8 @@ export class CreateOrganizationComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
-              private organizationService: OrganizationService) { }
+              private organizationService: OrganizationService) {
+  }
 
   ngOnInit() {
     this.createAdminUser = this.formBuilder.group({

@@ -1,36 +1,32 @@
-<div class="container-fluid" style="display: flex; justify-content: center; align-items: center;position: absolute; height: 100%;width: 100%;">
+<div class="container-fluid"
+     style="display: flex; justify-content: center; align-items: center;position: absolute; height: 100%;width: 100%;">
   <div style="width: 70%;background: whitesmoke">
     <div class="accordion" id="accordionExample">
       <div class="card">
         <div class="card-header" id="headingOne">
           <h2 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" disabled style="color: dodgerblue;opacity: 1">
+            <button aria-controls="collapseOne" aria-expanded="true" class="btn btn-link" data-target="#collapseOne"
+                    data-toggle="collapse" disabled style="color: dodgerblue;opacity: 1" type="button">
               Create Admin User
             </button>
           </h2>
         </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div aria-labelledby="headingOne" class="collapse show" data-parent="#accordionExample" id="collapseOne">
           <div class="card-body" style="padding: 0 10%">
             <div style="text-align: center;padding: 2%">Please Enter your details</div>
             <form [formGroup]="createAdminUser">
               <div class="row">
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="First name" formControlName="firstName" autocomplete="off">
+                    <input autocomplete="off" class="form-control" formControlName="firstName" placeholder="First name"
+                           type="text">
                   </label>
                 </div>
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName" autocomplete="off">
-                  </label>
-                </div>
-              </div>
-              <div class="row"><h1></h1></div>
-              <div class="row">
-                <div class="col">
-                  <label>
-                    <input type="text" class="form-control" placeholder="Email" formControlName="email" autocomplete="off">
+                    <input autocomplete="off" class="form-control" formControlName="lastName" placeholder="Last name"
+                           type="text">
                   </label>
                 </div>
               </div>
@@ -38,7 +34,8 @@
               <div class="row">
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone" autocomplete="off">
+                    <input autocomplete="off" class="form-control" formControlName="email" placeholder="Email"
+                           type="text">
                   </label>
                 </div>
               </div>
@@ -46,12 +43,23 @@
               <div class="row">
                 <div class="col">
                   <label>
-                    <input type="password" class="form-control" placeholder="Password" formControlName="password" autocomplete="off">
+                    <input autocomplete="off" class="form-control" formControlName="phone" placeholder="Phone Number"
+                           type="text">
+                  </label>
+                </div>
+              </div>
+              <div class="row"><h1></h1></div>
+              <div class="row">
+                <div class="col">
+                  <label>
+                    <input autocomplete="off" class="form-control" formControlName="password" placeholder="Password"
+                           type="password">
                   </label>
                 </div>
                 <div class="col">
                   <label>
-                    <input type="password" class="form-control" placeholder="Retype Password" formControlName="retypePassword" autocomplete="off">
+                    <input autocomplete="off" class="form-control" formControlName="retypePassword"
+                           placeholder="Retype Password" type="password">
                   </label>
                 </div>
               </div>
@@ -60,18 +68,20 @@
               <div class="row"><h1></h1></div>
               <div class="row">
                 <div class="col" style="display: flex;flex-direction: row; justify-content: flex-end;">
-                  <button type="button" class="btn btn-sm btn-primary" style=" margin: 0 5%" [disabled]="createAdminUser.invalid" (click)="createAdmin()">
+                  <button (click)="createAdmin()" [disabled]="createAdminUser.invalid" class="btn btn-sm btn-primary"
+                          style=" margin: 0 5%" type="button">
                     Submit
                   </button>
-                  <button type="button" class="btn btn-sm btn-secondary">
+                  <button class="btn btn-sm btn-secondary" type="button">
                     Reset
                   </button>
                 </div>
               </div>
               <div class="row"><h1></h1></div>
-              <div class="row" *ngIf="errorMessage.length > 0"><h1></h1></div>
-              <div class="row" *ngIf="errorMessage.length > 0" style="display: flex; flex-direction: row; justify-content: center;color: red">{{errorMessage}}</div>
-              <div class="row" *ngIf="errorMessage.length > 0"><h1></h1></div>
+              <div *ngIf="errorMessage.length > 0" class="row"><h1></h1></div>
+              <div *ngIf="errorMessage.length > 0" class="row"
+                   style="display: flex; flex-direction: row; justify-content: center;color: red">{{errorMessage}}</div>
+              <div *ngIf="errorMessage.length > 0" class="row"><h1></h1></div>
               <div class="row"><h1></h1></div>
             </form>
           </div>
@@ -80,12 +90,13 @@
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" disabled style="color: dodgerblue;opacity: 1">
+            <button aria-controls="collapseTwo" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseTwo"
+                    data-toggle="collapse" disabled style="color: dodgerblue;opacity: 1" type="button">
               Verify User
             </button>
           </h2>
         </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionExample" id="collapseTwo">
           <div class="card-body">
             <form [formGroup]="OTPVerification">
               <div class="row">
@@ -96,16 +107,20 @@
                 </div>
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="Enter 6 digits OTP" formControlName="otpField" maxlength="6">
+                    <input class="form-control" formControlName="otpField" maxlength="6" placeholder="Enter 6 digits OTP"
+                           type="text">
                   </label>
                 </div>
                 <div class="col" style="display: flex; flex-direction: row; align-items: center">
-                  <button class="btn btn-primary btn-sm" [disabled]="OTPVerification.invalid" (click)="OTPVerify()">Verify OTP</button>
+                  <button (click)="OTPVerify()" [disabled]="OTPVerification.invalid" class="btn btn-primary btn-sm">
+                    Verify OTP
+                  </button>
                 </div>
               </div>
-              <div class="row" *ngIf="errorOTPMessage.length > 0"><h1></h1></div>
-              <div class="row" *ngIf="errorOTPMessage.length > 0" style="display: flex; flex-direction: row; justify-content: center;color: red">{{errorOTPMessage}}</div>
-              <div class="row" *ngIf="errorOTPMessage.length > 0"><h1></h1></div>
+              <div *ngIf="errorOTPMessage.length > 0" class="row"><h1></h1></div>
+              <div *ngIf="errorOTPMessage.length > 0" class="row"
+                   style="display: flex; flex-direction: row; justify-content: center;color: red">{{errorOTPMessage}}</div>
+              <div *ngIf="errorOTPMessage.length > 0" class="row"><h1></h1></div>
             </form>
           </div>
         </div>
@@ -113,20 +128,22 @@
       <div class="card">
         <div class="card-header" id="headingThree">
           <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" disabled style="color: dodgerblue;opacity: 1">
+            <button aria-controls="collapseThree" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseThree"
+                    data-toggle="collapse" disabled style="color: dodgerblue;opacity: 1" type="button">
               Create Organization
             </button>
           </h2>
         </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionExample" id="collapseThree">
           <div class="card-body">
             <form [formGroup]="createOrganization">
               <div class="form-group">
                 <label for="exampleInputEmail1">Organization Name</label>
-                <input type="email" class="form-control" formControlName="organizationName" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">Please Enter Unique Name.</small>
+                <input aria-describedby="emailHelp" class="form-control" formControlName="organizationName" id="exampleInputEmail1"
+                       type="email">
+                <small class="form-text text-muted" id="emailHelp">Please Enter Unique Name.</small>
               </div>
-              <button type="submit" class="btn btn-primary btn-sm" (click)="createOrganizationFunc()">Submit</button>
+              <button (click)="createOrganizationFunc()" class="btn btn-primary btn-sm" type="submit">Submit</button>
             </form>
           </div>
         </div>

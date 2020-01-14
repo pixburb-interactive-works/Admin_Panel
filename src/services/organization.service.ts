@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
 
@@ -9,7 +9,8 @@ export class OrganizationService {
 
   modalBaseURL = 'organization';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   createOrganization(organizationName: string, createdBy: string) {
     console.log(environment.baseURL);

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-land',
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LandComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+  }
 
   ngOnInit() {
   }

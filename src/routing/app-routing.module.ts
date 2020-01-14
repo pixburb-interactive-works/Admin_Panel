@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 import {LandComponent} from '../components/app/land/land.component';
-import { LoginComponent } from 'src/components/app/login/login.component';
+import {LoginComponent} from 'src/components/app/login/login.component';
 import {HomeComponent} from '../components/app/home/home.component';
 import {CreateOrganizationComponent} from '../components/app/create-organization/create-organization.component';
 
