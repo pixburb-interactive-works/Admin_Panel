@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../services/user.service';
 import * as $ from 'jquery';
+import {OrganizationService} from '../../../services/organization.service';
 
 @Component({
   selector: 'app-create-organization',
@@ -12,11 +13,13 @@ export class CreateOrganizationComponent implements OnInit {
 
   createAdminUser: FormGroup;
   OTPVerification: FormGroup;
+  createOrganization: FormGroup;
   errorMessage = '';
   errorOTPMessage = '';
 
   constructor(private formBuilder: FormBuilder,
-              private userService: UserService) { }
+              private userService: UserService,
+              private organizationService: OrganizationService) { }
 
   ngOnInit() {
     this.createAdminUser = this.formBuilder.group({
@@ -30,7 +33,10 @@ export class CreateOrganizationComponent implements OnInit {
     this.OTPVerification = this.formBuilder.group({
       otpField: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
-    // $('button[aria-controls="collapseTwo"]').attr('disabled', false).trigger('click').attr('disabled', true);
+    this.createOrganization = this.formBuilder.group({
+      organizationName: new FormControl(null, [Validators.required, Validators.minLength(6)])
+    });
+    $('button[aria-controls="collapseThree"]').attr('disabled', false).trigger('click').attr('disabled', true);
   }
 
   createAdmin() {
@@ -63,11 +69,23 @@ export class CreateOrganizationComponent implements OnInit {
       this.OTPVerification.value.otpField
     ).subscribe(
       (data: any) => {
-        console.log(data);
         if (data.status === 200) {
           $('button[aria-controls="collapseThree"]').attr('disabled', false).trigger('click').attr('disabled', true);
         } else {
           this.errorOTPMessage = data.displayMessage;
+        }
+      }
+    );
+  }
+
+  createOrganizationFunc() {
+    this.organizationService.createOrganization(
+      '',
+      ''
+    ).subscribe(
+      (data: any) => {
+        if (data === '') {
+
         }
       }
     );

@@ -17,20 +17,12 @@
               <div class="row">
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+                    <input type="text" class="form-control" placeholder="First name" formControlName="firstName" autocomplete="off">
                   </label>
                 </div>
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
-                  </label>
-                </div>
-              </div>
-              <div class="row"><h1></h1></div>
-              <div class="row">
-                <div class="col">
-                  <label>
-                    <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName" autocomplete="off">
                   </label>
                 </div>
               </div>
@@ -38,7 +30,7 @@
               <div class="row">
                 <div class="col">
                   <label>
-                    <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone">
+                    <input type="text" class="form-control" placeholder="Email" formControlName="email" autocomplete="off">
                   </label>
                 </div>
               </div>
@@ -46,12 +38,20 @@
               <div class="row">
                 <div class="col">
                   <label>
-                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                    <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone" autocomplete="off">
+                  </label>
+                </div>
+              </div>
+              <div class="row"><h1></h1></div>
+              <div class="row">
+                <div class="col">
+                  <label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password" autocomplete="off">
                   </label>
                 </div>
                 <div class="col">
                   <label>
-                    <input type="password" class="form-control" placeholder="Retype Password" formControlName="retypePassword">
+                    <input type="password" class="form-control" placeholder="Retype Password" formControlName="retypePassword" autocomplete="off">
                   </label>
                 </div>
               </div>
@@ -60,7 +60,7 @@
               <div class="row"><h1></h1></div>
               <div class="row">
                 <div class="col" style="display: flex;flex-direction: row; justify-content: flex-end;">
-                  <button type="button" class="btn btn-sm btn-primary" style=" margin: 0% 5%" [disabled]="createAdminUser.invalid" (click)="createAdmin()">
+                  <button type="button" class="btn btn-sm btn-primary" style=" margin: 0 5%" [disabled]="createAdminUser.invalid" (click)="createAdmin()">
                     Submit
                   </button>
                   <button type="button" class="btn btn-sm btn-secondary">
@@ -120,7 +120,14 @@
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <form [formGroup]="createOrganization">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Organization Name</label>
+                <input type="email" class="form-control" formControlName="organizationName" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">Please Enter Unique Name.</small>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm" (click)="createOrganizationFunc()">Submit</button>
+            </form>
           </div>
         </div>
       </div>
